@@ -1,0 +1,261 @@
+/* =========================================================
+   PALETA MYMISHI (Tons Rosa Pastel & Moderno)
+   ========================================================= */
+:root {
+    --mishi-pink: #ec4899;         /* Rosa vibrante principal (botões/destaques) */
+    --mishi-pink-hover: #db2777;   /* Rosa mais escuro no hover */
+    --mishi-pink-soft: #fce7f3;    /* Rosa pastel suave (badges/fundos) */
+    --mishi-pink-border: #fbcfe8;  /* Borda rosa delicada */
+    --mishi-bg: #fff8fa;           /* Fundo geral branco-rosado muito limpo */
+    --mishi-dark: #331d2c;         /* Texto escuro com subtom ameixa suave */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--mishi-bg);
+    color: var(--mishi-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* =========================================================
+   NAVBAR MODERNA CLARA
+   ========================================================= */
+.navbar-mymishi {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--mishi-pink-border);
+}
+
+.brand-text {
+    color: var(--mishi-pink);
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+}
+
+.navbar-mymishi .nav-link {
+    color: var(--mishi-dark);
+    border-radius: 50px;
+    padding: 0.45rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.navbar-mymishi .nav-link:hover {
+    background-color: var(--mishi-pink-soft);
+    color: var(--mishi-pink);
+}
+
+/* =========================================================
+   BOTÕES E BADGES PERSONALIZADOS MYMISHI
+   ========================================================= */
+.btn-pink {
+    background-color: var(--mishi-pink);
+    border-color: var(--mishi-pink);
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-pink:hover {
+    background-color: var(--mishi-pink-hover);
+    border-color: var(--mishi-pink-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
+.btn-outline-pink {
+    color: var(--mishi-pink);
+    border-color: var(--mishi-pink);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-pink:hover {
+    background-color: var(--mishi-pink);
+    border-color: var(--mishi-pink);
+    color: #ffffff;
+}
+
+.bg-pink-subtle {
+    background-color: var(--mishi-pink-soft) !important;
+}
+
+.text-pink, .text-pink-dark {
+    color: var(--mishi-pink) !important;
+}
+
+.border-pink {
+    border-color: var(--mishi-pink) !important;
+}
+
+/* =========================================================
+   CARTÕES, HERO E TABELAS ARREDONDADAS
+   ========================================================= */
+.card {
+    border: 1px solid var(--mishi-pink-border);
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.06);
+    overflow: hidden;
+}
+
+.hero-mymishi {
+    background: linear-gradient(135deg, #ffffff 0%, #fce7f3 100%);
+    border: 1px solid var(--mishi-pink-border);
+    border-radius: 1.5rem;
+}
+
+.table thead th {
+    background-color: #fff0f5;
+    color: var(--mishi-pink-hover);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--mishi-pink-border);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.table-hover tbody tr {
+    transition: all 0.15s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #fff5f9;
+}
+
+
+html {
+    font-size: 16px; /* Garante base confortável */
+}
+
+.stock-thumb {
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 2px solid var(--mishi-pink-border);
+    background-color: #ffffff;
+}
+
+.table td, .table th {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    font-size: 1rem;
+}
+
+.brand-logo {
+    height: 120px; /* Ajusta este valor (ex: 60px a 80px) conforme o tamanho que preferires */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.04); /* Pequeno efeito suave ao passar o rato */
+}
+
+/* =========================================================
+   SIDEBAR ADMIN MYMISHI
+   ========================================================= */
+.sidebar-mymishi {
+    width: 270px;
+    min-width: 270px;
+    border-right: 2px solid var(--mishi-pink-border) !important;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.admin-link {
+    color: var(--mishi-dark);
+    font-weight: 500;
+    border-radius: 50px !important;
+    padding: 0.65rem 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.admin-link:hover {
+    background-color: var(--mishi-pink-soft);
+    color: var(--mishi-pink);
+    transform: translateX(4px);
+}
+
+.admin-link.active {
+    background-color: var(--mishi-pink) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);
+}
+
+.profile-preview {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--mishi-pink);
+    background-color: #ffffff;
+}
+
+.avatar-option input:checked + .avatar-img {
+    border: 3px solid var(--mishi-pink);
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.35);
+}
+
+.table td, .table th {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    font-size: 1rem;
+    vertical-align: middle; /* Centra texto, imagens e botões em altura */
+}
+
+/* Paginação limpa em círculos rosa pastel */
+.pagination {
+    gap: 6px;
+    margin-bottom: 0;
+}
+
+.pagination .page-item .page-link {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    color: #d66886;
+    background-color: #fff;
+    border: 1px solid #f8bbd0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(214, 104, 134, 0.08);
+    transition: all 0.2s ease;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #fce4ec;
+    color: #ad1457;
+    border-color: #f48fb1;
+    transform: translateY(-1px);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #e88ca5;
+    border-color: #e88ca5;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(232, 140, 165, 0.35);
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #fdf6f8;
+    color: #d8b4be;
+    border-color: #f3dce3;
+    box-shadow: none;
+}
