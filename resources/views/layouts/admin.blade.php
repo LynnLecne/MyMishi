@@ -100,7 +100,7 @@
    title="Ver/Editar o meu perfil">
     @if(auth()->user()->isAdmin()) 👑 @elseif(auth()->user()->isMod()) 🎀 @else 🌸 @endif
     {{ auth()->user()->name }}
-    
+
 </a>
 
                             <form action="{{ route('logout') }}" method="POST" class="d-inline">
@@ -122,7 +122,7 @@
     </main>
 
     <footer class="text-center py-4 text-muted mt-5 border-top bg-white">
-        <p class="mb-0">BACKOFFICE 🩷 <strong>mymishi</strong> &copy; {{ date('Y') }}</p>
+        <p class="mb-0">BACKOFFICE 🩷 <strong>MyMishi</strong> &copy; {{ date('Y') }}</p>
     </footer>
 
     <!-- Bootstrap 5.3.9 JS -->

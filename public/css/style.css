@@ -259,3 +259,14 @@ html {
     border-color: #f3dce3;
     box-shadow: none;
 }
+
+/* Estado selecionado / ativo para os radio buttons (.btn-check) */
+.btn-check:checked + .btn-outline-pink,
+.btn-check:active + .btn-outline-pink,
+.btn-outline-pink:active,
+.btn-outline-pink.active {
+    background-color: #fce4ec; /* Ou o teu tom bg-pink-subtle */
+    border: 2px solid #e91e63;  /* Ou a tua cor principal text-pink / border-pink */
+    color: #c2185b;
+    box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.15);
+}

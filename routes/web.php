@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     // Inventário / Matéria-Prima (Mod e Admin)
     Route::prefix('admin/materials')->name('materials.')->group(function () {
         Route::get('/', [MaterialController::class, 'index'])->name('all');
+        Route::get('/export', [MaterialController::class, 'export'])->name('export'); // Exportar para excel
         Route::get('/create', [MaterialController::class, 'create'])->name('create');
         Route::post('/', [MaterialController::class, 'store'])->name('store');
         Route::get('/{material}/edit', [MaterialController::class, 'edit'])->name('edit');

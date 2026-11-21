@@ -1,21 +1,27 @@
-@extends('layouts.admin')
+@extends(auth()->check() && auth()->user()->isStaff() ? 'layouts.admin' : 'layouts.app')
 
 @section('content')
 <div class="container py-4">
 
     {{-- Cabeçalho --}}
-    <div class="hero-mymishi p-4 p-md-5 mb-4 shadow-sm d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
-        <div>
-            <h1 class="display-6 fw-bold mb-1">🧶 Atelier & Matéria-Prima</h1>
-            <p class="text-muted mb-0">
-                Gere os fios, tecidos, acessórios e embalagens disponíveis no atelier da <strong>mymishi</strong>.
-            </p>
-        </div>
+<div class="hero-mymishi p-4 p-md-5 mb-4 shadow-sm d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+    <div>
+        <h1 class="display-6 fw-bold mb-1">🧶 Atelier & Matéria-Prima</h1>
+        <p class="text-muted mb-0">
+            Gere os fios, tecidos, acessórios e embalagens disponíveis no atelier da <strong>mymishi</strong>.
+        </p>
+    </div>
 
+    {{-- Grupo de Botões --}}
+    <div class="d-flex flex-wrap gap-2">
+        <a href="{{ route('materials.export') }}" class="btn btn-outline-pink btn-lg rounded-pill px-4 shadow-sm bg-white">
+            ⎘ Exportar Excel
+        </a>
         <a href="{{ route('materials.create') }}" class="btn btn-pink btn-lg rounded-pill px-4 shadow-sm">
             + Novo Material
         </a>
     </div>
+</div>
 
     @if (session('message'))
         <div class="alert alert-success alert-dismissible fade show rounded-4 shadow-sm" role="alert">
@@ -112,6 +118,6 @@
 </div>
         </div>
     </div>
-
+<a href="{{ route('materials.export') }}" class="btn btn-outline-pink">Exportar Excel (.xlsx)</a>
 </div>
 @endsection

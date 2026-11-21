@@ -7,24 +7,36 @@
         @endif
 
         {{-- Cabeçalho da Categoria --}}
-        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-pink-subtle">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-                <div>
-                    <a href="{{ route('catalog.index') }}" class="text-decoration-none text-pink small fw-semibold">
-                        ← Voltar às Categorias
-                    </a>
-                    <h3 class="fw-bold mt-1 mb-1">🪷 {{ $category->name }}</h3>
-                    <p class="text-muted mb-0">Consulta os artigos disponíveis nesta categoria e as quantidades em stock.</p>
-                </div>
+        <div class="bg-pink-subtle rounded-4 p-4 mb-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+    {{-- Título e Descrição da Categoria --}}
+    <div>
+        <h2 class="fw-bold mb-1 d-flex align-items-center gap-2">
+            @if($category->image)
+                <img src="{{ asset($category->image) }}" alt="{{ $category->name }}" style="width: 36px; height: 36px; object-fit: cover;" class="rounded-circle">
+            @else
+                <span>🪷</span>
+            @endif
+            <span>{{ $category->name }}</span>
+        </h2>
+        <p class="text-muted mb-0">
+            Consulta os artigos disponíveis nesta categoria e as quantidades em stock.
+        </p>
+    </div>
 
-                @if (auth()->check() && auth()->user()->isStaff())
-                    <a href="{{ route('products.create', ['category_id' => $category->id]) }}"
-                        class="btn btn-pink rounded-pill px-4 shadow-sm">
-                        + Novo Artigo
-                    </a>
-                @endif
-            </div>
-        </div>
+    {{-- Grupo de Botões de Ação --}}
+    <div class="d-flex flex-wrap align-items-center gap-2">
+        <a href="{{ route('catalog.index') }}" class="btn btn-outline-pink bg-white rounded-pill px-4">
+            ← Voltar às Categorias
+        </a>
+
+        @if(auth()->check() && auth()->user()->isStaff())
+            <a href="{{ route('products.create', ['category_id' => $category->id]) }}" class="btn btn-pink rounded-pill px-4 shadow-sm">
+                + Novo Artigo
+            </a>
+        @endif
+    </div>
+</div>
+
 
         {{-- Tabela de Artigos --}}
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
@@ -107,7 +119,7 @@
                 </tbody>
             </table>
             <div class="mt-4 px-2">
-    {{ $categories->links() }}
+    {{ $products->links() }}
 </div>
         </div>
     </div>

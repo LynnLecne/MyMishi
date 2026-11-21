@@ -8,18 +8,11 @@
         <div>
             <h1 class="display-6 fw-bold mb-1">🌸 Resumo da Loja</h1>
             <p class="text-muted mb-0">
-                Olá, <strong>{{ auth()->user()->name }}</strong>! Aqui tens o resumo em tempo real do armazém da <strong>mymishi</strong>.
+                Olá, <strong>{{ auth()->user()->name }}</strong>! Aqui tens o resumo em tempo real do armazém da <strong>MyMishi</strong>.
             </p>
         </div>
 
-        <div class="d-flex gap-2">
-            <a href="{{ route('categories.create') }}" class="btn btn-outline-pink rounded-pill px-4">
-                + Categoria
-            </a>
-            <a href="{{ route('products.create') }}" class="btn btn-pink rounded-pill px-4 shadow-sm">
-                + Novo Artigo
-            </a>
-        </div>
+
     </div>
 
     {{-- 4 Cartões de Resumo (KPIs) --}}

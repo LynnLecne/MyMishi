@@ -9,6 +9,12 @@
                     <h4 class="fw-bold mb-0 text-pink">Iniciar Sessão</h4>
                 </div>
                 <div class="card-body p-4 bg-white">
+                    @if (session('status'))
+                        <div class="alert alert-success small mb-3" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-3">
@@ -19,7 +25,14 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-medium">Password</label>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label class="form-label fw-medium mb-1">Password</label>
+                                @if (Route::has('password.request'))
+                                    <a href="{{ route('password.request') }}" class="small text-pink text-decoration-none">
+                                        Esqueceste-te da password?
+                                    </a>
+                                @endif
+                            </div>
                             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" required>
                             @error('password')
                                 <div class="invalid-feedback">{{ $message }}</div>

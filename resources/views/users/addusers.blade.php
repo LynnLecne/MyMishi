@@ -1,4 +1,4 @@
-@extends(auth()->user()->isStaff() ? 'layouts.admin' : 'layouts.app')
+@extends(auth()->user()?->isStaff() ? 'layouts.admin' : 'layouts.app')
 
 @section('content')
 <div class="container py-5">

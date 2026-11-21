@@ -7,7 +7,7 @@
     <div class="hero-mymishi p-4 p-md-5 mb-4 shadow-sm d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
         <div>
             <h1 class="display-6 fw-bold mb-1">
-                🩷 Catálogo de Stock
+                🩷 Catálogo de Produtos
             </h1>
             <p class="text-muted mb-0">
                 Consulta as categorias de armazém e verifica a disponibilidade dos produtos em tempo real.
@@ -15,13 +15,16 @@
         </div>
 
         {{-- Botão de Criar Categoria (Visível para Mod e Admin) --}}
-        @auth
-            @if(auth()->user()->isStaff())
-                <a href="{{ route('categories.create') }}" class="btn btn-pink btn-lg rounded-pill px-4 shadow-sm">
-                   + Nova Categoria
-                </a>
-            @endif
-        @endauth
+        @if(auth()->check() && auth()->user()->isStaff())
+    <div class="d-flex flex-wrap align-items-center gap-2">
+        <a href="{{ route('categories.create') }}" class="btn btn-outline-pink bg-white rounded-pill px-4">
+            + Categoria
+        </a>
+        <a href="{{ route('products.create') }}" class="btn btn-pink rounded-pill px-4 shadow-sm">
+            + Novo Artigo
+        </a>
+    </div>
+@endif
     </div>
 
     {{-- Mensagens de Sucesso (Feedback Visual) --}}
