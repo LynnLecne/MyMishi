@@ -1,4 +1,6 @@
-<img width="1254" height="1254" alt="mymishi" src="https://github.com/user-attachments/assets/49fa1f3c-0f69-4275-a1d7-50ed0d2c82fb" />
+<p align="center">
+  <img src="[public/images/logo.png](https://github.com/user-attachments/assets/49fa1f3c-0f69-4275-a1d7-50ed0d2c82fb)" alt="Logo mymishi" width="180">
+</p>
 # 🩷 MyMishi — Sistema de Gestão de Catálogo, Inventário e Precificação
 
 Aplicação web desenvolvida em **Laravel 13** e **Bootstrap 5** para a gestão completa de uma loja de artigos artesanais (**mymishi**), integrando catálogo público, controlo de stock, gestão de matérias-primas, cálculo dinâmico de preços de venda e controlo de acessos por perfis de utilizador.
