@@ -59,7 +59,7 @@
 
                 <div class="d-flex justify-content-end gap-2">
                     <a href="{{ route('categories.show', $product->category_id) }}" class="btn btn-outline-pink rounded-pill px-4">Cancelar</a>
-                    <button type="submit" class="btn btn-pink rounded-pill px-4 shadow-sm">Atualizar Artigo</button>
+                    <button type="submit" class="btn btn-pink rounded-pill px-4 shadow-sm">Actualizar Artigo</button>
                 </div>
             </form>
         </div>

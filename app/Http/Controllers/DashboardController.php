@@ -16,13 +16,13 @@ class DashboardController extends Controller
 
         // Totais gerais
         $totalCategories = Category::count();
-        $totalProducts   = Product::count();
+        $totalProducts = Product::count();
         $totalStockUnits = Product::sum('quantity');
-        $totalUsers      = User::count();
+        $totalUsers = User::count();
 
         // Alertas: Artigos esgotados ou com stock baixo (<= 2 unidades)
         $lowStockProducts = Product::with('category')
-            ->where('quantity', '<=', 5)
+            ->where('quantity', '<=', 2)
             ->orderBy('quantity', 'asc')
             ->get();
 

@@ -78,7 +78,7 @@ class ProductController extends Controller
         ]);
 
         return redirect()->route('categories.show', $product->category_id)
-            ->with('message', 'Artigo atualizado com sucesso!');
+            ->with('message', 'Artigo actualizado com sucesso!');
     }
 
     public function destroy(Product $product)

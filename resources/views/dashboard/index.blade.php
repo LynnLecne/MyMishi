@@ -15,7 +15,7 @@
 
     </div>
 
-    {{-- 4 Cartões de Resumo (KPIs) --}}
+    {{-- Resumo --}}
     <div class="row g-3 mb-4">
         <div class="col-6 col-md-3">
             <div class="card border-0 shadow-sm rounded-4 p-3 h-100 text-center">
@@ -51,11 +51,11 @@
     </div>
 
     <div class="row g-4">
-        {{-- Coluna Esquerda: Alertas de Stock Baixo / Esgotado --}}
+        {{-- Alertas de Stock Baixo / Esgotado --}}
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm rounded-4 h-100">
                 <div class="card-header bg-white py-3 px-4 d-flex justify-content-between align-items-center border-bottom">
-                    <h5 class="fw-bold mb-0">⚠️ Alertas de Stock (≤ 5 un.)</h5>
+                    <h5 class="fw-bold mb-0">⚠️ Alertas de Stock (≤ 2 un.)</h5>
                     <span class="badge bg-danger-subtle text-danger rounded-pill px-3 py-2">
                         {{ $lowStockProducts->count() }}
                     </span>
@@ -68,7 +68,7 @@
                                 <th class="ps-4">Artigo</th>
                                 <th>Categoria</th>
                                 <th class="text-center">Stock</th>
-                                <th class="text-end pe-4">Ação</th>
+                                <th class="text-end pe-4">Acção</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -104,7 +104,7 @@
             </div>
         </div>
 
-        {{-- Coluna Direita: Últimos Artigos Adicionados --}}
+        {{-- Últimos Artigos Adicionados --}}
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm rounded-4 h-100">
                 <div class="card-header bg-white py-3 px-4 d-flex justify-content-between align-items-center border-bottom">

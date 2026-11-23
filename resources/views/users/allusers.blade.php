@@ -56,7 +56,7 @@
 
                     <td class="text-end pe-4">
                         <div class="d-inline-flex gap-2">
-                            {{-- Ver/Editar: admin/mod veem de todos; user vê só do seu --}}
+                            {{-- Ver/Editar: admin/mod vêem de todos; user só vê o seu --}}
                             @if (auth()->user()->isStaff() || auth()->id() === $user->id)
                                 <a href="{{ route('users.edit', $user->id) }}"
                                     class="btn btn-outline-pink btn-sm rounded-pill px-3">

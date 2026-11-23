@@ -30,7 +30,7 @@ class PricingController extends Controller
     abort_unless(Auth::check() && Auth::user()->isAdmin(), 403);
 
     $pricing = $product->pricing;
-    $materials = Material::orderBy('name')->paginate(10)->withQueryString();
+    $materials = Material::orderBy('name')->get();
     $usedMaterials = $product->materials->pluck('pivot.quantity_used', 'id')->toArray();
 
     // Vai buscar o último valor/hora usado noutro produto (ou 8.00€ por defeito)

@@ -34,6 +34,18 @@ public function materials(): BelongsToMany
                 ->withTimestamps();
 }
 
+
+public function isLowStock(): bool
+{
+    return $this->quantity < 2;
+}
+
+public function scopeLowStock($query)
+{
+    return $query->where('quantity', '<', 2);
+}
+
+
 }
 
 

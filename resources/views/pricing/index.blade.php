@@ -8,7 +8,7 @@
         <div>
             <h1 class="display-6 fw-bold mb-1">👛 Precificação & Margens</h1>
             <p class="text-muted mb-0">
-                Define os custos de produção, margens de lucro e preços finais das peças da <strong>mymishi</strong>.
+                Define os custos de produção, margens de lucro e preços finais das peças da <strong>MyMishi</strong>.
             </p>
         </div>
         <span class="badge bg-pink-subtle text-pink rounded-pill px-3 py-2 fs-6">
@@ -52,7 +52,7 @@
                         <th>Custo Total</th>
                         <th>Margem</th>
                         <th>Preço Final</th>
-                        <th class="text-end pe-4">Ações</th>
+                        <th class="text-end pe-4">Acções</th>
                     </tr>
                 </thead>
                 <tbody>

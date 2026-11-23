@@ -5,26 +5,23 @@
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-6">
             <div class="card shadow-sm">
-                <!-- Cabeçalho do Cartão -->
+
                 <div class="card-header bg-pink-subtle py-4 text-center border-0">
                     <h3 class="fw-bold mb-1 text-pink">✨ Criar Conta</h3>
                     <p class="text-muted small mb-0">Preenche os teus dados para te registares na <strong>mymishi</strong></p>
                 </div>
 
-                <!-- Corpo do Formulário -->
                 <div class="card-body p-4 p-md-5 bg-white">
                     <form method="POST" action="{{ route('users.store') }}">
                         @csrf
-
-
                         <div class="mb-3">
-                            <label for="name" class="form-label fw-medium">Username <span class="text-danger">*</span></label>
+                            <label for="name" class="form-label fw-medium">Username<span class="text-danger">*</span></label>
                             <input type="text"
                                    id="name"
                                    name="name"
                                    class="form-control @error('name') is-invalid @enderror"
                                    value="{{ old('name') }}"
-                                   placeholder="Ex: Ana Silva"
+                                   placeholder="Ex: mishi_fan"
                                    required
                                    autofocus>
                             @error('name')
@@ -40,7 +37,7 @@
                                    name="email"
                                    class="form-control @error('email') is-invalid @enderror"
                                    value="{{ old('email') }}"
-                                   placeholder="ana@exemplo.pt"
+                                   placeholder="mishifan.nb1@email.pt"
                                    required>
                             @error('email')
                                 <div class="invalid-feedback">{{ $message }}</div>

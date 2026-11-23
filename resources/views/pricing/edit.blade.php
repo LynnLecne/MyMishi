@@ -5,7 +5,7 @@
     <div class="card border-0 shadow-sm rounded-4 mx-auto" style="max-width: 850px;">
         <div class="card-header bg-pink-subtle border-0 py-3 px-4 rounded-top-4">
             <h4 class="fw-bold text-pink mb-0">🏷️ Precificar: {{ $product->name }}</h4>
-            <small class="text-muted">Coleção: {{ $product->category->name ?? 'Geral' }}</small>
+            <small class="text-muted">Colecção: {{ $product->category->name ?? 'Geral' }}</small>
         </div>
 
         <div class="card-body p-4 bg-white rounded-bottom-4">
@@ -13,8 +13,8 @@
                 @csrf
                 @method('PUT')
 
-                {{-- Bloco 1: Seleção de Materiais do Inventário --}}
-                <h6 class="fw-bold text-pink mb-3">🧶 1. Matéria-Prima Gasta na Peça</h6>
+                {{-- Materiais do Inventário --}}
+                <h6 class="fw-bold text-pink mb-3">🧶 1. Materiais Gastos na Peça</h6>
                 <div class="table-responsive border rounded-4 mb-4">
                     <table class="table table-sm align-middle mb-0">
                         <thead class="bg-light">
@@ -56,7 +56,7 @@
                             @empty
                                 <tr>
                                     <td colspan="4" class="text-center py-3 text-muted small">
-                                        Ainda não tens matérias-primas registadas no Inventário.
+                                        Ainda não tens produtos registados no Inventário.
                                     </td>
                                 </tr>
                             @endforelse
@@ -64,7 +64,7 @@
                     </table>
                 </div>
 
-                     {{-- Bloco 2: Custos e Margem --}}
+                     {{-- Custos e Margem --}}
                 <h6 class="fw-bold text-pink mb-3">💰 2. Custos e Margem de Lucro</h6>
                 <div class="row g-3">
                     <div class="col-md-3">
@@ -118,22 +118,7 @@
                     </div>
                 </div>
 
-                {{-- Resumo --}}
-                <div class="mt-4 p-3 rounded-4 bg-light d-flex justify-content-between align-items-center">
-                    <span class="text-muted small">Custo Base Total: <strong id="display_cost">0,00 €</strong></span>
-                    <span class="text-muted small">Lucro Estimado: <strong id="display_profit" class="text-success">0,00 €</strong></span>
-                </div>
 
-                <div class="d-flex justify-content-end gap-2 mt-4">
-                    <a href="{{ route('pricing.index') }}" class="btn btn-outline-pink rounded-pill px-4">Cancelar</a>
-                    <button type="submit" class="btn btn-pink rounded-pill px-4 shadow-sm">Guardar Precificação</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-                {{-- Resumo --}}
                 <div class="mt-4 p-3 rounded-4 bg-light d-flex justify-content-between align-items-center">
                     <span class="text-muted small">Custo Base Total: <strong id="display_cost">0,00 €</strong></span>
                     <span class="text-muted small">Lucro Estimado: <strong id="display_profit" class="text-success">0,00 €</strong></span>
@@ -149,7 +134,7 @@
 </div>
 
 <script>
-    function atualizarMateriais() {
+    function actualizarMateriais() {
         let totalMateriais = 0;
 
         document.querySelectorAll('.material-qty-input').forEach(input => {
@@ -183,7 +168,7 @@
         const lab = rate * hours;
         document.getElementById('labor_cost').value = lab.toFixed(2);
 
-        // Atualiza texto auxiliar em minutos (ex: 1.5h = 90 min)
+        // Actualiza texto auxiliar em minutos (ex: 1.5h = 90 min)
         const totalMins = Math.round(hours * 60);
         document.getElementById('minutes_helper').textContent = totalMins + ' minutos';
 
@@ -196,9 +181,9 @@
         document.getElementById('display_profit').textContent = profit.toFixed(2).replace('.', ',') + ' €';
     }
 
-    document.querySelectorAll('.material-qty-input').forEach(el => el.addEventListener('input', atualizarMateriais));
+    document.querySelectorAll('.material-qty-input').forEach(el => el.addEventListener('input', actualizarMateriais));
     document.querySelectorAll('.calc-input').forEach(el => el.addEventListener('input', calcularPreco));
 
-    atualizarMateriais();
+    actualizarMateriais();
 </script>
 @endsection

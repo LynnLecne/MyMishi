@@ -14,7 +14,7 @@
                 <div class="mb-3">
                     <label class="form-label fw-medium">Categoria *</label>
                     <select name="category_id" class="form-select border-pink @error('category_id') is-invalid @enderror" required>
-                        <option value="">Seleciona uma categoria...</option>
+                        <option value="">Selecciona uma categoria...</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}" @selected(old('category_id', $selectedCategory) == $category->id)>
                                 {{ $category->name }}
@@ -29,7 +29,7 @@
                 <div class="mb-3">
                     <label class="form-label fw-medium">Nome do Artigo *</label>
                     <input type="text" name="name" class="form-control border-pink @error('name') is-invalid @enderror"
-                           value="{{ old('name') }}" placeholder="Ex: Coelhinho Pastel Mishi" required>
+                           value="{{ old('name') }}" placeholder="Ex: Coisa muito fofa..." required>
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

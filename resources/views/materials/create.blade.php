@@ -30,25 +30,25 @@
     @error('unit') <div class="invalid-feedback">{{ $message }}</div> @enderror
 </div>
 
-                    {{-- Quantidade Atual --}}
+                    {{-- Quantidade --}}
                     <div class="col-md-6">
-                        <label class="form-label fw-medium">Quantidade Atual *</label>
+                        <label class="form-label fw-medium">Quantidade Actual *</label>
                         <input type="number" step="0.01" name="quantity" class="form-control border-pink @error('quantity') is-invalid @enderror"
                                value="{{ old('quantity', 0) }}" min="0" required>
                         @error('quantity') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
-                    {{-- Custo Unitário --}}
+                    {{-- Custo por Unidade --}}
                     <div class="col-md-6">
-                        <label class="form-label fw-medium">Custo Unitário (€) *</label>
+                        <label class="form-label fw-medium">Custo por Unidade (€) *</label>
                         <input type="number" step="0.01" name="unit_cost" class="form-control border-pink @error('unit_cost') is-invalid @enderror"
                                value="{{ old('unit_cost', '0.00') }}" min="0" required>
                         @error('unit_cost') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
-                    {{-- Galeria de Ícones Predefinidos --}}
+                    {{-- Ícones disponíveis --}}
                     <div class="col-12 mt-4">
-                        <label class="form-label fw-medium d-block">Escolher Ícone da Galeria</label>
+                        <label class="form-label fw-medium d-block">Ícones disponíveis</label>
 
                         @error('preset_image')
                             <div class="text-danger small mb-2">{{ $message }}</div>
@@ -79,7 +79,7 @@
 
                     {{-- Upload Personalizado (Opcional) --}}
                     <div class="col-12 mt-3">
-                        <label class="form-label fw-medium">Ou Carregar Foto Personalizada (Opcional)</label>
+                        <label class="form-label fw-medium">Ou Carregar Imagem Personalizada (Opcional)</label>
                         <input type="file"
                                name="custom_image"
                                class="form-control border-pink @error('custom_image') is-invalid @enderror"
