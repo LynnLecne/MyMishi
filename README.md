@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[public/images/logo.png](https://github.com/user-attachments/assets/49fa1f3c-0f69-4275-a1d7-50ed0d2c82fb)" alt="Logo mymishi" width="180">
+  <img src="https://github.com/user-attachments/assets/49fa1f3c-0f69-4275-a1d7-50ed0d2c82fb" alt="Logo mymishi" width="180">
 </p>
 # 🩷 MyMishi — Sistema de Gestão de Catálogo, Inventário e Precificação
 
