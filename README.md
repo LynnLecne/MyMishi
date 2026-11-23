@@ -1,60 +1,92 @@
-![MyMishi](assets/mymishi.png)
+<img width="1254" height="1254" alt="mymishi" src="https://github.com/user-attachments/assets/49fa1f3c-0f69-4275-a1d7-50ed0d2c82fb" />
+# 🩷 MyMishi — Sistema de Gestão de Catálogo, Inventário e Precificação
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Aplicação web desenvolvida em **Laravel 13** e **Bootstrap 5** para a gestão completa de uma loja de artigos artesanais (**mymishi**), integrando catálogo público, controlo de stock, gestão de matérias-primas, cálculo dinâmico de preços de venda e controlo de acessos por perfis de utilizador.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+## ✨ Funcionalidades Principais
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🛍️ Catálogo Público & Gestão de Artigos
+* **Listagem de Categorias e Produtos:** Visualização de categorias com contagem dinâmica de artigos associados e navegação fluida para os respetivos produtos.
+* **Gestão de Imagens:** Suporte para seleção de ícones predefinidos ou upload personalizado (validado até 2 MB), com limpeza automática de ficheiros antigos e modal *Lightbox* para visualização em tamanho real.
+* **Controlo de Stock:** Indicação visual de disponibilidade em tempo real (`Em stock`, `Stock baixo` e `Esgotado`).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 📊 Dashboard & Alertas em Tempo Real
+* **Indicadores (KPIs):** Contagem total de categorias, modelos criados, unidades disponíveis em loja e utilizadores registados.
+* **Alertas de Stock Baixo:** Monitorização automática de produtos com quantidade reduzida (`≤ 2 un.`) e matérias-primas abaixo do nível mínimo, com acesso direto para reposição.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🧶 Inventário de Materiais & Precificação (Exclusivo Admin)
+* **Gestão de Matérias-Primas:** Controlo de materiais por unidade (`un.`, `m`, etc.), custo unitário e exportação de dados.
+* **Calculadora Dinâmica de Preços:** Associação muitos-para-muitos (`material_product`) entre artigos e materiais gastos, cálculo automático de mão de obra por quartos de hora (`0.25h`), custos de embalagem, margem de lucro percentual e preço final de venda em tempo real.
 
-## Learning Laravel
+### 🔐 Autenticação, Segurança & Perfis
+Sistema de autenticação baseado em **Laravel Fortify** com três níveis de permissão:
+* **Visitante (Guest):** Consulta do catálogo público e registo de nova conta.
+* **Utilizador (`user`):** Consulta do catálogo, visualização de utilizadores e edição do próprio perfil (incluindo seleção de avatar).
+* **Moderador (`mod`):** Acesso ao Dashboard, gestão de categorias, produtos e inventário de materiais.
+* **Administrador (`admin`):** Acesso total, incluindo eliminação de registos, gestão de perfis/dados fiscais (NIF e morada) e módulo de precificação.
+* **Segurança Adicional:**
+  * Recuperação de password por email com token seguro.
+  * Logout automático após **5 minutos de inatividade**, com modal de aviso e contagem decrescente nos últimos 30 segundos.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tecnologias Utilizadas
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+* **Backend:** PHP 8.3+, Laravel 13, Laravel Fortify
+* **Frontend:** Blade Templates, Bootstrap 5.3, JavaScript (ES6+)
+* **Base de Dados:** MySQL / MariaDB (Eloquent ORM, Migrations, Seeders & Factories)
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🚀 Instalação e Execução Local
 
-```bash
-composer require laravel/boost --dev
+1. **Clonar o repositório:**
+   ```bash
+   git clone https://github.com/LynnLecne/MyMishi/
+   cd mymishi
+   ```
 
-php artisan boost:install
-```
+2. **Instalar dependências PHP:**
+   ```bash
+   composer install
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+3. **Configurar o ambiente:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   Edita o ficheiro `.env` com as credenciais da tua base de dados MySQL (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
 
-## Contributing
+4. **Executar migrações e povoar a base de dados (Seeders):**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Criar ligação simbólica para o armazenamento de imagens:**
+   ```bash
+   php artisan storage:link
+   ```
 
-## Code of Conduct
+6. **Iniciar o servidor local:**
+   ```bash
+   php artisan serve
+   ```
+   Acede no browser a `http://127.0.0.1:8000`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 📁 Estrutura de Permissões (Resumo)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| Funcionalidade | Visitante | User | Mod | Admin |
+| :--- | :---: | :---: | :---: | :---: |
+| Ver catálogo e produtos | ✅ | ✅ | ✅ | ✅ |
+| Registar conta / Recuperar password | ✅ | — | — | — |
+| Editar o próprio perfil | — | ✅ | ✅ | ✅ |
+| Aceder ao Dashboard | — | — | ✅ | ✅ |
+| Criar e editar Categorias, Produtos e Materiais | — | — | ✅ | ✅ |
+| Apagar registos | — | — | — | ✅ |
+| Módulo de Precificação | — | — | — | ✅ |
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
